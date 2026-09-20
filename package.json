@@ -1,0 +1,4 @@
+{
+  "name":"decorist-lady","version":"2.0.0","private":true,"type":"module",
+  "dependencies":{"@neondatabase/serverless":"latest","bcryptjs":"latest","jose":"latest"}
+}
