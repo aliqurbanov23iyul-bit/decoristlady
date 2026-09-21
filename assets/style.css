@@ -727,3 +727,19 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
   .hero-social-links .social-btn{padding:10px 14px!important}
   .floating-dock{right:14px!important}
 }
+
+/* Prevent layout from painting outside the page when zoomed out */
+html,body{min-width:0!important;overflow-x:clip!important}
+body>*{max-width:100vw}
+.nav,.topbar,main,.footer{box-sizing:border-box;overflow-x:clip}
+.footer .container,.footer .footgrid{min-width:0;max-width:100%}
+.footgrid>*{min-width:0}
+.footer-contact-list,.footer-contact-item,.footer-contact-text{min-width:0;max-width:100%}
+.footer-contact-text b{white-space:normal;overflow-wrap:anywhere}
+@media(max-width:800px){
+ .footer{width:100%!important;overflow:hidden!important}
+ .footgrid{display:grid!important;grid-template-columns:1fr!important;gap:30px!important;width:100%!important}
+ .footer-contact-list{width:100%!important}
+ .footer-contact-item{width:100%!important}
+ .cta{width:100%!important;max-width:100%!important;overflow:hidden!important}
+}
