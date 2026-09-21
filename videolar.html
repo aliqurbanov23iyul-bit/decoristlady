@@ -1,0 +1,13 @@
+<!doctype html><html lang="az"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Decorist Lady videoları"><link rel="stylesheet" href="assets/style.css"><title>Videolarımız | Decorist Lady</title></head><body><div id="site-nav"></div><main>
+<section class="pagehead"><div class="container"><span class="eyebrow">DECORIST LADY</span><h1>Videolarımız</h1><p>Hazırladığımız dekorlardan və xüsusi tədbirlərdən seçilmiş anlar.</p></div></section>
+<section class="section alt"><div class="container"><div class="reels-grid" id="reelsGrid"><p class="muted">Videolar yüklənir...</p></div></div></section>
+</main><div id="site-footer"></div><div class="toast" id="toast"></div><script src="assets/app.js"></script><script>
+DL.boot();
+const escapeHtml=v=>String(v||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+(async()=>{try{
+ const reels=await DL.api('/api/reels'),box=document.querySelector('#reelsGrid');
+ if(!reels.length){box.innerHTML='<div class="panel"><h3>Videolar tezliklə əlavə olunacaq.</h3></div>';return}
+ box.innerHTML=reels.map(x=>`<article class="reel-card">${x.title?`<h3>${escapeHtml(x.title)}</h3>`:''}<blockquote class="instagram-media" data-instgrm-permalink="${x.url}" data-instgrm-version="14"></blockquote></article>`).join('');
+ const s=document.createElement('script');s.async=true;s.src='https://www.instagram.com/embed.js';document.body.appendChild(s);
+}catch(e){document.querySelector('#reelsGrid').innerHTML='<div class="panel">Videolar hazırda yüklənmədi.</div>'}})();
+</script></body></html>
