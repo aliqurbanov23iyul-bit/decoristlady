@@ -30,6 +30,7 @@ function nav(c){
       <div class="links">
         <a href="index.html">Ana səhifə</a>
         <a href="decorlar.html">Dekorlar</a>
+        <a href="videolar.html">Videolarımız</a>
         <a href="xidmetler.html">Xidmətlər</a>
         <a href="haqqimizda.html">Haqqımızda</a>
         <a href="elaqe.html">Əlaqə</a>
